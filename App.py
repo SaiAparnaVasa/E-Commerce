@@ -3,7 +3,8 @@ from otp import genotp
 from cmail import sendmail
 from token_1 import encode,decode
 import os
-import app
+from app import app
+application=app
 #import razorpay
 import re
 import mysql.connector
