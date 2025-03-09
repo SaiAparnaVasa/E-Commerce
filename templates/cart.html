@@ -17,7 +17,7 @@
 
         body {
             background: url(https://img.freepik.com/free-vector/blue-curve-background_53876-113112.jpg);
-            background-repeat: no-repeat;
+            background-repeat:repeat;
             background-size: cover;
             background-attachment: fixed;
         }
@@ -69,7 +69,7 @@
                             <h6 class="card-id">Available stock :{{items[i][5]}}</h6>
                             <h6 class="card-id">category :{{items[i][4]}}</h6>
                             <br>
-                            <form method="POST" action="{{url_for('pay',itemid=i,name=items[i][0],price=items[i][1])}}">
+                            <form method="POST" action="#">
                             <b>Select Quantity</b>
                             <select name="qyt">
                                 <option value="1">1</option>

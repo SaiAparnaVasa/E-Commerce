@@ -18,11 +18,11 @@
 
         form {
             width: 400px;
-            height: auto;
+            height: 95vh;
             border: 1px solid;
-            padding: 2%;
+            padding: 1%;
             border-radius: 8px;
-            margin: 6% 0 0 35%;
+            margin: 1% 0 0 35%;
             color: white;
         }
     </style>
@@ -41,7 +41,7 @@
             <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Uptdate your address"
                 name="address"  value="{{admin_data[1]}}" required />
         </div>
-        <img src="/static/{{admin_data[2]}}" alt="Image" width="auto" height="300px">
+        <center><img src="/static/{{admin_data[2]}}" alt="Image" width="auto" height="250px"></center>
         <div class="mb-3">
             <label for="formFile" class="form-label"></label>
             <input class="form-control" type="file" name="file" id="formFile" />

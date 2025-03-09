@@ -20,14 +20,19 @@
 
     form {
       width: 400px;
-      height: auto;
-      margin-top: 8%;
+      height: 50vh;
+      margin-top: 10%;
       padding: 3%;
       border: 1px solid white;
       border-radius: 10px;
       color: white;
       box-shadow: 1px 1px 10px white;
       backdrop-filter: blur(10px);
+      margin-left: 5%;
+    }
+    .mb-3 a{
+      text-decoration: none;
+      color:white;
     }
   </style>
 </head>
@@ -51,11 +56,11 @@
       <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
     </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <center><button type="submit" class="btn btn-primary">Submit</button></center>
+    <div class="mb-3">
+      <center><a href="{{url_for('adminforgot')}}">Forgot password</a></center>
+    </div>
   </form>
-  <div class="mb-3">
-    <a href="{{url_for('adminforgot')}}">Forgot password</a>
-  </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>

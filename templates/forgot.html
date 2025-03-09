@@ -4,6 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+      form{
+        border:1px solid black;
+        width:15%;
+        margin-top: 17%;
+        padding:1%;
+        border-radius: 4%;
+        background-color: #f9eded;
+      }
+      body{
+        background-color: #3f428df1;
+      }
+      button{
+        background-color: #3f428df1;
+        color:#f9eded;
+        border: none;
+        padding:3%;
+      }
+    </style>
 </head>
 {% with messages = get_flashed_messages() %}
   {% if messages %}
@@ -13,9 +32,11 @@
   {% endif %}
 {% endwith %}
 <body>
+  <center>
     <form method="post">
-        <input type="email" name="email" placeholder="Enter your email"/>
-        <button>submit</button>
+        <input type="email" name="email" placeholder="Enter your email"/></br></br>
+        <button>Submit</button>
     </form>
+  </center>
 </body>
 </html>

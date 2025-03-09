@@ -130,6 +130,9 @@
       font-weight: bold;
       color: red;
     }
+    /* button,a{
+      margin-top: 5%;
+    } */
   </style>
 </head>
 {% with messages = get_flashed_messages() %}
@@ -248,8 +251,8 @@
               <a href="{{url_for('description',itemid=i[0])}}"><h5 class="card-title">{{i[1][0:5]}}... </h5></a>
               </div>
               <br> <span style="float: right">Cost:- {{i[2]}}/-</span>
-              <span style="float: left">Stock:- {{i[3]}}</span>
-              <form method="post" action="{{url_for('pay',itemid=i[0],name=i[1],price=i[2])}}">
+              <span style="float: left;">Stock:- {{i[3]}}</span>
+              <form method="post" action="#">
                 <select name="qyt">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -263,10 +266,10 @@
                     <option value="10">10</option>
                 </select>
                 <br>
-                <button class="btn btn-success" style="float: right;">Buy NOW</button></form>
+                <button class="btn btn-success" style="float: right; margin-top: 10%;">Buy NOW</button></form>
               <div class="btn1">
                 <a href="{{url_for('addcart',itemid=i[0],name=i[1],price=i[2],image=i[5],category=i[4],qyt=i[3])}}"
-                  class="btn btn-warning" style="float: left;" >Add to cart</a>
+                  class="btn btn-warning" style="float: left; margin-top: 15%;" >Add to cart</a>
                 
               </div>
             </div>

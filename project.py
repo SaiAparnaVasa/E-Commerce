@@ -626,6 +626,7 @@ def readreview(itemid):
             try:
                 cursor=mydb.cursor(buffered=True)
                 cursor.execute('select title,review,rating,itemid,username from reviews where username=%s',[session.get('user')])
+                reviewdata=cursor.fetchall()
                 mydb.commit()
             except Exception as e:
                 print(f'Error in reading review {e}')
@@ -633,33 +634,10 @@ def readreview(itemid):
                 return redirect(url_for('description',itemid=itemid))
             else:
                 cursor.close()
-                return redirect(url_for('description',itemid=itemid))
-            return render_template('readreview.html')
+               
+            return render_template('readreview.html',reviewdata=reviewdata)
     else:
         return redirect(url_for('userlogin'))
-# @app.route('/readreview/<itemid>', methods=['GET'])
-# def readreview(itemid):
-#     if session.get('user'):
-#         try:
-#             cursor = mydb.cursor(buffered=True)
-#             print(f"Fetching reviews for itemid: {itemid}")
-#             cursor.execute('SELECT title, review, rating, username FROM reviews WHERE itemid = uuid_to_bin(%s)', [itemid])
-#             reviews = cursor.fetchall()
-#             if not reviews:
-#                 print(f"No reviews found for itemid: {itemid}")
-#             cursor.execute('SELECT item_name, item_description FROM items WHERE itemid = uuid_to_bin(%s)', [itemid])
-#             item_data = cursor.fetchone()
-#             if not item_data:
-#                 print(f"No item data found for itemid: {itemid}")
-#         except Exception as e:
-#             print(f'Error in reading reviews: {e}')  
-#             flash("Can't retrieve reviews")
-#             return redirect(url_for('description', itemid=itemid))
-#         else:
-#             cursor.close()
-#             return render_template('reviews.html', reviews=reviews, itemid=itemid, item_data=item_data)
-#     else:
-#         return redirect(url_for('userlogin'))
 @app.route('/contactus',methods=['GET','POST'])
 def contactus():
     if request.method=='POST':
