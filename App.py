@@ -7,7 +7,7 @@ import os
 import re
 import mysql.connector
 # mydb=mysql.connector.connect(host='localhost',user='root',password='admin',db='ecommee') #for connecting database we are using module mysql.connector
-app=Flask(__name__)
+application=Flask(__name__)
 app.secret_key='Aparna@2002'
 app.config['SESSION_TYPE']='filesystem'
 #client = razorpay.Client(auth=("rzp_test_tjooGAhi18WdC8", "AaGbqEAjyLLYrQMsZBV1kMDX"))
